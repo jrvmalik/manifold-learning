@@ -5,6 +5,7 @@ from scipy import sparse
 # data is an n x p matrix with rows as observations
 # k is the number of neighbours (e.g. 20)
 # d is the dimension of the embedding (e.g. 3)
+# this implementation uses the zero-one kernel and diffusion time 0
 
 def Diffusion( data, k, d ):
 
@@ -18,7 +19,7 @@ def Diffusion( data, k, d ):
 
     # affinity matrix
     W = sparse.coo_matrix((np.ones(n * k), (ii, jj.ravel())))
-    W = W.maximum(W.transpose())
+    W = W * W.transpose()
 
     # alpha normalization
     D = sparse.diags(1 / W.sum(axis=1).A.ravel())
@@ -39,4 +40,6 @@ def Diffusion( data, k, d ):
 
 # E is an n x d matrix with rows as observations
 # plot the last three columns of E for visualization purposes
-# colour the plot according to various parameters
+
+
+# Written by John Malik on 2018.6.23, john.malik@duke.edu.
