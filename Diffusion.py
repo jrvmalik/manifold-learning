@@ -38,5 +38,5 @@ def Diffusion( data, k, d ):
     return E
 
 # E is an n x d matrix with rows as observations
-# plot the first three columns of E for visualization purposes
+# plot the last three columns of E for visualization purposes
 # colour the plot according to various parameters

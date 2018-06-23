@@ -39,6 +39,6 @@ def AdjacencyDiffusion( data, k, d ):
     return E
 
 # E is an n x d matrix with rows as observations
-# plot the first three columns of E for visualization purposes
+# plot the last three columns of E for visualization purposes
 
 # Written by John Malik on 2018.6.23, john.malik@duke.edu.
