@@ -34,12 +34,11 @@ def Diffusion( data, k, d ):
 
     # shift back and normalize
     E = D * E[:, :-1]
-    E = np.divide(E, np.linalg.norm(E, axis=0))
+    # E = np.divide(E, np.linalg.norm(E, axis=0))
 
     return E
 
 # E is an n x d matrix with rows as observations
 # plot the last three columns of E for visualization purposes
-
 
 # Written by John Malik on 2018.6.23, john.malik@duke.edu.
